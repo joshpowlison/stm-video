@@ -13,7 +13,7 @@ const moduleFunctions = {
 Module.LoadModule(moduleFunctions);
 
 var items = [];
-var clipPath	= 'clips';
+var clipPath	= 'Assets';
 
 var transitionDuration = 0;
 var generalTransitionDuration = 0.25;
