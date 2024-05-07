@@ -1,0 +1,72 @@
+video
+{
+	position:fixed;
+	left:0;
+	top:0;
+	right:0;
+	bottom:0;
+	overflow:hidden;
+	object-fit:contain;
+}
+
+.video-opaque
+{
+	background-color:black;
+}
+
+/* Transitions */
+video
+{
+	visibility:visible;
+	transition-property:none;
+}
+
+.cut video.hide
+{
+	visibility:hidden;
+}
+
+.fade video
+{
+	opacity:1;
+	transition-property:opacity;
+}
+
+.fade video.hide
+{
+	opacity:0;
+}
+
+.slide-left video,
+.slide-right video,
+.slide-down video,
+.slide-up video
+{
+	transform:translate(0%,0%);
+	transition-property:transform;
+}
+
+.slide-left video.hide
+{
+	transform:translate(100%,0%);
+}
+
+.slide-right video.hide
+{
+	transform:translate(-100%,0);
+}
+
+.slide-down video.hide
+{
+	transform:translate(0%,-100%);
+}
+
+.slide-up video.hide
+{
+	transform:translate(0%,100%);
+}
+
+video.invisible
+{
+	visibility:hidden;
+}
