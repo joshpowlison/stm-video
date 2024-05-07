@@ -1,6 +1,6 @@
 {
 	"name": "Video",
-	"version": 1,
+	"version": 2,
 	"coreFiles": [
 		"info.json",
 		"browser-source.html",
@@ -8,7 +8,7 @@
 		"styles.css"
 	],
 	"defaultFiles": [
-		"assets/example/RubberDuck.mp4"
+		"assets/examples/RubberDuck.mp4"
 	],
 	"commands": [
 		{

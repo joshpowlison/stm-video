@@ -13,7 +13,7 @@ const moduleFunctions = {
 Module.LoadModule(moduleFunctions);
 
 var items = [];
-var clipPath	= 'Assets';
+var clipPath	= 'assets';
 
 var transitionDuration = 0;
 var generalTransitionDuration = 0.25;
@@ -82,7 +82,7 @@ async function loadSettings(name, event)
 {
 	//setLooping(s.loop);
 	//setTransition(s.transitionType);
-	items = Utility.getAllPaths(Module.settings.global.fileStructure.modules.Video.clips);
+	items = Utility.getAllPaths(Module.settings.global.fileStructure.modules.Video[clipPath]);
 }
 
 async function stopClip(video)
