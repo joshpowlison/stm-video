@@ -1,14 +1,14 @@
 {
 	"name": "Video",
-	"version": 10,
-	"packageFiles": [
+	"version": 1,
+	"coreFiles": [
 		"info.json",
-		
 		"browser-source.html",
 		"script.js",
-		"styles.css",
-		
-		"Assets/Default/RubberDuck.mp4"
+		"styles.css"
+	],
+	"defaultFiles": [
+		"assets/example/RubberDuck.mp4"
 	],
 	"commands": [
 		{
