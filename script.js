@@ -5,7 +5,6 @@ const moduleFunctions = {
 	"videoSetTransitionType": setTransitionType,
 	"videoEnableLooping": videoEnableLooping,
 	"videoDisableLooping": videoDisableLooping,
-	"videoShowDishCam": videoShowDishCam,
 	"logAllOptions": logAllOptions,
 	"onInput": onInput,
 };
@@ -208,24 +207,6 @@ async function onInput(name, event)
 	{
 		stopAllVideos();
 	}
-}
-
-async function videoShowDishCam(name, event)
-{
-	// Show the dish cam
-	Module.F('OBS.SetSceneItemEnabled', {
-		target: "Zoom KitchenCam",
-		enabled: true
-	});
-
-	// Wait 10 seconds
-	await Utility.wait(10000);
-
-	// Hide the dish cam
-	Module.F('OBS.SetSceneItemEnabled', {
-		target: "Zoom KitchenCam",
-		enabled: false
-	});
 }
 
 function videoOnEnded(event)
