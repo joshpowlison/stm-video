@@ -1,5 +1,15 @@
 {
 	"name": "Video",
+	"version": 10,
+	"packageFiles": [
+		"info.json",
+		
+		"browser-source.html",
+		"script.js",
+		"styles.css",
+		
+		"Assets/Default/RubberDuck.mp4"
+	],
 	"commands": [
 		{
 			"name": "Video.LoadSettings",
@@ -41,6 +51,5 @@
 			"accessMask": 255,
 			"function": "onInput"
 		}
-	],
-	"version": 10
+	]
 }
