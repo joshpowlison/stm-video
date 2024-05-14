@@ -9,7 +9,7 @@ const moduleFunctions = {
 	"onInput": onInput,
 };
 
-Module.LoadModule(moduleFunctions);
+module.LoadModule(moduleFunctions);
 
 var items = [];
 var clipPath	= 'assets';
@@ -81,7 +81,7 @@ async function loadSettings(name, event)
 {
 	//setLooping(s.loop);
 	//setTransition(s.transitionType);
-	items = Utility.getAllPaths(Module.settings.global.fileStructure.modules.Video[clipPath]);
+	items = Utility.getAllPaths(module.settings.global.fileStructure.modules.Video[clipPath]);
 }
 
 async function stopClip(video)
@@ -122,7 +122,7 @@ async function videoPlay(name, event)
 	var videoPath = Utility.getMatchingFileInList(items, event);
 	if(videoPath == null)
 	{
-		Module.F('Console.LogError', 'No Video named "' + JSON.stringify(event) + '" found.');
+		module.F('Console.LogError', 'No Video named "' + JSON.stringify(event) + '" found.');
 		return;
 	}
 
@@ -190,7 +190,7 @@ function videoOnTimeUpdate(event)
 
 async function onInput(name, event)
 {
-	var isWithinScene = Module.IsGlobalPositionWithinScene(
+	var isWithinScene = module.IsGlobalPositionWithinScene(
 		event.cursorX,
 		event.cursorY
 	);
@@ -228,7 +228,7 @@ async function logAllOptions(name, event)
 	}
 
 	// Add in all clean animation names as well
-	var availableAnimations = Module.settings.global.fileStructure.modules.Animation.save.assets;
+	var availableAnimations = module.settings.global.fileStructure.modules.Animation.save.assets;
 
 	var animationNames = Object.keys(availableAnimations);
 	for(var i = 0, l = animationNames.length; i < l; i ++)
