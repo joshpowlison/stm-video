@@ -5,6 +5,7 @@ const moduleFunctions = {
 	"videoSetTransitionType": setTransitionType,
 	"videoEnableLooping": videoEnableLooping,
 	"videoDisableLooping": videoDisableLooping,
+	"videoShowDishCam": videoShowDishCam,
 	"logAllOptions": logAllOptions,
 	"onInput": onInput,
 };
@@ -12,7 +13,6 @@ const moduleFunctions = {
 module.LoadModule(moduleFunctions);
 
 var items = [];
-var clipPath	= 'assets';
 
 var transitionDuration = 0;
 var generalTransitionDuration = 0.25;
@@ -49,7 +49,7 @@ async function createVideoPlayer(videoPath)
 	lastZIndex ++;
 	video.loop = isLooping;
 	video.autoplay = true;
-	video.src = clipPath + '/' + videoPath;
+	video.src = '../../userData/Video/' + videoPath;
 
 	main.appendChild(video);
 
@@ -81,7 +81,7 @@ async function loadSettings(name, event)
 {
 	//setLooping(s.loop);
 	//setTransition(s.transitionType);
-	items = Utility.getAllPaths(module.settings.global.fileStructure.modules.Video[clipPath]);
+	items = Utility.getAllPaths(module.settings.global.fileStructure.userData.Video);
 }
 
 async function stopClip(video)
@@ -209,6 +209,24 @@ async function onInput(name, event)
 	}
 }
 
+async function videoShowDishCam(name, event)
+{
+	// Show the dish cam
+	module.F('OBS.SetSceneItemEnabled', {
+		target: "Zoom KitchenCam",
+		enabled: true
+	});
+
+	// Wait 10 seconds
+	await Utility.wait(10000);
+
+	// Hide the dish cam
+	module.F('OBS.SetSceneItemEnabled', {
+		target: "Zoom KitchenCam",
+		enabled: false
+	});
+}
+
 function videoOnEnded(event)
 {
 	stopClip(event.target);
@@ -228,7 +246,7 @@ async function logAllOptions(name, event)
 	}
 
 	// Add in all clean animation names as well
-	var availableAnimations = module.settings.global.fileStructure.modules.Animation.save.assets;
+	var availableAnimations = module.settings.global.fileStructure.userData.Animation;
 
 	var animationNames = Object.keys(availableAnimations);
 	for(var i = 0, l = animationNames.length; i < l; i ++)

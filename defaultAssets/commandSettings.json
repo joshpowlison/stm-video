@@ -1,0 +1,44 @@
+{
+	"commands": [
+		{
+			"name": "Video.LoadSettings",
+			"accessMask": 255,
+			"function": "loadSettings"
+		},
+		{
+			"name": "Video.Play",
+			"accessMask": 0,
+			"function": "videoPlay"
+		},
+		{
+			"name": "Video.Stop",
+			"accessMask": 0,
+			"function": "videoStop"
+		},
+		{
+			"name": "Video.SetTransitionType",
+			"accessMask": 0,
+			"function": "videoSetTransitionType"
+		},
+		{
+			"name": "Video.Stop",
+			"accessMask": 0,
+			"function": "videoStop"
+		},
+		{
+			"name": "Video.EnableLooping",
+			"accessMask": 0,
+			"function": "videoEnableLooping"
+		},
+		{
+			"name": "Video.DisableLooping",
+			"accessMask": 0,
+			"function": "videoDisableLooping"
+		},
+		{
+			"name": "Common.OnGlobalInput",
+			"accessMask": 255,
+			"function": "onInput"
+		}
+	]
+}
