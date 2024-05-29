@@ -79,9 +79,10 @@ async function videoStop(name, event)
 
 async function loadSettings(name, event)
 {
+	console.log('SETTINGS LOADED?!?!');
 	//setLooping(s.loop);
 	//setTransition(s.transitionType);
-	items = Utility.getAllPaths(module.settings.global.fileStructure.userData.Video);
+	items = Utility.getAllPaths(module.globalSettings.fileStructure.userData.Video);
 }
 
 async function stopClip(video)
@@ -246,7 +247,7 @@ async function logAllOptions(name, event)
 	}
 
 	// Add in all clean animation names as well
-	var availableAnimations = module.settings.global.fileStructure.userData.Animation;
+	var availableAnimations = module.globalSettings.fileStructure.userData.Animation;
 
 	var animationNames = Object.keys(availableAnimations);
 	for(var i = 0, l = animationNames.length; i < l; i ++)
