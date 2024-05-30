@@ -82,7 +82,7 @@ async function loadSettings(name, event)
 	console.log('SETTINGS LOADED?!?!');
 	//setLooping(s.loop);
 	//setTransition(s.transitionType);
-	items = Utility.getAllPaths(module.globalSettings.fileStructure.userData.Video);
+	items = Utility.getAllPaths(module.globalSettings.fileStructure.userData.Video, [ 'mp4', 'webm', 'avi' ]);
 }
 
 async function stopClip(video)
