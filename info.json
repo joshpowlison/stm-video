@@ -1,4 +1,8 @@
 {
+	"guid": "C802F6F5-3B22-832E-5FE1-4F664FA47F3A",
 	"name": "Video",
-	"version": 2
+	"type": 0,
+	"isPublic": 1,
+	"version": 2,
+	"lastUpdateDate": "2024-05-31 07:44:37"
 }

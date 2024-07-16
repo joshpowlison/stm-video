@@ -10,7 +10,7 @@ const moduleFunctions = {
 	"onInput": onInput,
 };
 
-module.LoadModule(moduleFunctions);
+module.addActions(moduleFunctions);
 
 var items = [];
 
@@ -25,7 +25,7 @@ var container = document;
 var videos = [];
 var lastZIndex = 0;
 
-async function setTransitionType(name, event)
+async function setTransitionType(event)
 {
 	if(event === 'cut')
 		transitionDuration = 0;
@@ -71,13 +71,13 @@ async function createVideoPlayer(videoPath)
 	return video;
 }
 
-async function videoStop(name, event)
+async function videoStop(event)
 {
 	for(var i = 0; i < videos.length; i ++)
 		stopClip(videos[i]);
 }
 
-async function loadSettings(name, event)
+async function loadSettings(event)
 {
 	console.log('SETTINGS LOADED?!?!');
 	//setLooping(s.loop);
@@ -108,17 +108,17 @@ async function stopClip(video)
 	video.remove();
 }
 
-async function videoEnableLooping(name, event)
+async function videoEnableLooping(event)
 {
 	setLooping(true);
 }
 
-async function videoDisableLooping(name, event)
+async function videoDisableLooping(event)
 {
 	setLooping(false);
 }
 
-async function videoPlay(name, event)
+async function videoPlay(event)
 {
 	var videoPath = Utility.getMatchingFileInList(items, event);
 	if(videoPath == null)
@@ -189,7 +189,7 @@ function videoOnTimeUpdate(event)
 	}
 }
 
-async function onInput(name, event)
+async function onInput(event)
 {
 	var isWithinScene = module.IsGlobalPositionWithinScene(
 		event.cursorX,
@@ -210,7 +210,7 @@ async function onInput(name, event)
 	}
 }
 
-async function videoShowDishCam(name, event)
+async function videoShowDishCam(event)
 {
 	// Show the dish cam
 	module.F('OBS.SetSceneItemEnabled', {
@@ -233,7 +233,7 @@ function videoOnEnded(event)
 	stopClip(event.target);
 }
 
-async function logAllOptions(name, event)
+async function logAllOptions(event)
 {
 	var publicLog = '';
 	var regexGet = /\/(.+)\.[^.]+$/;
